@@ -1,11 +1,17 @@
-import React from 'react'
+import React, {useState, createContext, useContext} from 'react'
 
-import { Container, NavGroup, Group, Inner, Image, NavBar, Logo, Link, Button, Hamburger, Bar, Title, Text } from './styles/header'
+import { Container, NavGroup, Group, Inner, Image, NavBar, NavList, NavItem, Break, Logo, Link, Button, Hamburger, Bar, Title, Text } from './styles/header'
 
+const HeaderContext = createContext()
 
 // Header Component 
 export default function Header({ children, ...restProps }){
-    return <Container {...restProps}>{children}</Container>
+    const [display, setDisplay] = useState(true)
+    return (
+        <HeaderContext.Provider value={{ display, setDisplay }}>
+            <Container {...restProps}>{children}</Container>
+        </HeaderContext.Provider>
+    )
 }
 
 Header.Group = function HeaderGroup({ children, ...restProps }){
@@ -17,7 +23,20 @@ Header.NavGroup = function HeaderNavGroup({ children, ...restProps }){
 }
 // NavBar 
 Header.NavBar = function HeaderNavBar({ children, ...restProps }){
-    return <NavBar {...restProps}>{children}</NavBar>
+    const { display } = useContext(HeaderContext)
+    return display && <NavBar {...restProps} >{children}</NavBar>
+}
+
+Header.NavList = function HeaderNavList({ children, ...restProps }){
+    return <NavList {...restProps}>{children}</NavList>
+}
+
+Header.NavItem = function HeaderNavItem({ children, ...restProps }){
+    return <NavItem {...restProps}>{children}</NavItem>
+}
+
+Header.Break = function HeaderBreak({ children, ...restProps }){
+    return <Break {...restProps}>{children}</Break>
 }
 
 Header.Inner = function HeaderInner({ children, ...restProps }){
@@ -41,8 +60,9 @@ Header.Button = function HeaderButton({ children, ...restProps }){
 }
 
 Header.Hamburger = function HeaderHamburger({ ...restProps }){
+    const { display, setDisplay } = useContext(HeaderContext)
     return (
-        <Hamburger {...restProps}>
+        <Hamburger {...restProps} onClick={() => setDisplay(!display)}>
             <Bar/>
             <Bar/>
             <Bar/>
