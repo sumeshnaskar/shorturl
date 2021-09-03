@@ -44,7 +44,7 @@ export const NavList = styled.ul`
     text-align: center;
     padding: 0;
     margin: 0.5em 0;
-    
+    padding: 0.5em 0;
 
     @media(min-width:700px){
         display: flex;
@@ -62,9 +62,8 @@ export const NavItem = styled.li`
     font-weight: 500;
     color: hsl(0, 0%, 75%);
     font-size: 0.8rem;
-    padding: 0.25em;
-    cursor: pointer;
-    margin-right: 2em;
+    padding-bottom: 0.5em;
+    cursor: pointer; 
 
     &:hover,:focus{
         color: #fff;
@@ -73,6 +72,7 @@ export const NavItem = styled.li`
     @media(min-width:700px){
         display: flex; 
         padding: 0;
+        margin-right: 2em;
 
         &:hover,:focus{
             color: #000;
@@ -145,7 +145,7 @@ export const Button = styled.button`
     margin-left: 0;
     font-weight: 700;
     font-size: 0.8rem;
-    margin-right: 2em;
+    
 
     &:hover,:focus{
         background-color: hsl(180, 66%, 75%);
