@@ -64,7 +64,13 @@ Header.Inner = function HeaderInner({ children, ...restProps }){
 }
 
 Header.Logo = function HeaderLogo({ ...restProps }){
-    return <Logo {...restProps}/>
+    return (
+        <Logo 
+            src = {process.env.PUBLIC_URL + "/images/logo.svg"} 
+            alt="Shorty logo"
+            {...restProps}
+        />
+    )
 }
 
 Header.Image = function HeaderImage({ ...restProps }){
