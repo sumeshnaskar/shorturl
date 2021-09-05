@@ -19,13 +19,16 @@ export function HeaderContainer(){
                             <Header.NavItem>Login</Header.NavItem>
                             <Header.Button>Sign Up</Header.Button>
                         </Header.NavList>
-                    </Header.NavBar>
-                    
-                    
-                             
+                    </Header.NavBar>              
                 </Header.NavGroup>
                 
                 <Header.Group>
+                    <Header.Inner>
+                        <Header.Image 
+                            src = {process.env.PUBLIC_URL + "/images/illustration-working.svg"} 
+                            alt="person working on desk"
+                        />    
+                    </Header.Inner>
                     <Header.Inner>                    
                         <Header.Title>More than just shorter links</Header.Title>
                         <Header.Text>
@@ -33,12 +36,6 @@ export function HeaderContainer(){
                             on how your links are performing.
                         </Header.Text>
                         <Header.Button>Get Started</Header.Button>
-                    </Header.Inner>
-                    <Header.Inner>
-                        <Header.Image 
-                            src = {process.env.PUBLIC_URL + "/images/illustration-working.svg"} 
-                            alt="person working on desk "
-                        />    
                     </Header.Inner>
                 </Header.Group>
             </Header>
