@@ -6,7 +6,7 @@ export function HeaderContainer(){
         <>
             <Header>
                 <Header.NavGroup>
-                    <Header.Logo src = {process.env.PUBLIC_URL + "/images/logo.svg"} alt="Shorty logo"/>
+                    <Header.Logo />
                     <Header.Hamburger/>
                     <Header.NavBar>
                         <Header.NavList>
