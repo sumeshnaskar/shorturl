@@ -1,12 +1,28 @@
 import React, {useState, createContext, useContext} from 'react'
 
-import { Container, NavGroup, Group, Inner, Image, NavBar, NavList, NavItem, Break, Logo, Link, Button, Hamburger, Bar, Title, Text } from './styles/header'
+import { 
+    Container, 
+    NavGroup, 
+    Group, 
+    Inner, 
+    Image, 
+    NavBar, 
+    NavList, 
+    NavItem, 
+    Break, 
+    Logo, 
+    Button, 
+    Hamburger, 
+    Bar, 
+    Title, 
+    Text 
+} from './styles/header'
 
 const HeaderContext = createContext()
 
 // Header Component 
 export default function Header({ children, ...restProps }){
-    const [display, setDisplay] = useState(true)
+    const [display, setDisplay] = useState(false)
     return (
         <HeaderContext.Provider value={{ display, setDisplay }}>
             <Container {...restProps}>{children}</Container>
@@ -24,7 +40,11 @@ Header.NavGroup = function HeaderNavGroup({ children, ...restProps }){
 // NavBar 
 Header.NavBar = function HeaderNavBar({ children, ...restProps }){
     const { display } = useContext(HeaderContext)
-    return display && <NavBar {...restProps} >{children}</NavBar>
+    return (
+        display ? 
+        <NavBar {...restProps} display="block">{children}</NavBar> :
+        <NavBar {...restProps} display="none">{children}</NavBar>
+    )
 }
 
 Header.NavList = function HeaderNavList({ children, ...restProps }){
@@ -49,10 +69,6 @@ Header.Logo = function HeaderLogo({ ...restProps }){
 
 Header.Image = function HeaderImage({ ...restProps }){
     return <Image {...restProps}/>
-}
-
-Header.Link = function HeaderLink({ children, ...restProps }){
-    return <Link {...restProps}>{children}</Link>
 }
 
 Header.Button = function HeaderButton({ children, ...restProps }){
