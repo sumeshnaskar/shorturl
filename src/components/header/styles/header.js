@@ -1,8 +1,9 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
+    user-select: none;
 `
 
 export const Group = styled.div`
@@ -22,8 +23,7 @@ export const NavGroup = styled.div`
     align-items: flex-end; 
 
     @media(min-width:700px){
-            
-        
+        width: 95%;
     }
 `
 
@@ -97,13 +97,24 @@ export const Inner = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width:100%;  
+    width:100%;
+    
+    @media(min-width: 700px){
+        &:last-child{
+            margin-left: 2em;
+        }
+    }
 `
 
 export const Logo = styled.img` 
     margin-top: 1em;
     margin-bottom: -0.25em;
     margin-right: 2em;
+    margin-left: 0.5em;
+
+    @media(min-width: 700px){
+        margin-left: 2em;
+    }
 `
 
 export const Button = styled.button`
@@ -190,6 +201,7 @@ export const Text = styled.p`
     text-align: left;
     margin-bottom: 2em;
     font-size: 1.2rem;
+    
   }
 
 `
