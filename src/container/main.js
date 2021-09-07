@@ -3,6 +3,7 @@ import { Main } from '../components'
 
 export function MainContainer(){
     return (
+        <>
         <Main>
             <Main.Title>Advanced Statistics</Main.Title>
             <Main.Text>
@@ -47,5 +48,10 @@ export function MainContainer(){
                 </Main.Card>
             </Main.Wrapper>
         </Main>
+        <Main.BackgroundBanner>
+            <Main.Title>Boost your links today</Main.Title>
+            <Main.Button>Get Started</Main.Button>
+        </Main.BackgroundBanner>
+        </>
     )
 }
