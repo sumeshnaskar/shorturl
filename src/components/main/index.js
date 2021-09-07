@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Wrapper, Card, Title, Text, Image, ImageWrapper, Connection } from './styles/main'
+import { Container, Wrapper, Card, Title, Text, Image, ImageWrapper, Connection, BackgroundBanner, Button } from './styles/main'
 
 export default function Main({ children, ...restProps}){
     return <Container {...restProps}>{children}</Container>
@@ -31,4 +31,12 @@ Main.Image = function MainImage({ ...restProps }){
 
 Main.Connection = function MainConnection(){
     return <Connection/>
+}
+
+Main.Button = function MainButton({ children, ...restProps }){
+    return <Button {...restProps}>{children}</Button>
+}
+
+Main.BackgroundBanner = function MainBackgroundBanner({ children, ...restProps }){
+    return <BackgroundBanner {...restProps}>{children}</BackgroundBanner>
 }
