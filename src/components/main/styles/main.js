@@ -144,6 +144,7 @@ export const Button = styled.button`
     cursor: pointer;
     font-weight: 700;
     font-size: .8rem;
+    user-select: none;
 
     &:hover,:focus{
         background-color: hsl(180, 66%, 75%);
