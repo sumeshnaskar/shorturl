@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Card, Form, Error, Input, Button } from './styles/short'
+import { Container, Card, Group, Form, Error, Input, Button } from './styles/short'
 
 export default function Short({ children, ...restProps}){
     return <Container {...restProps}>{children}</Container>
@@ -8,6 +8,10 @@ export default function Short({ children, ...restProps}){
 
 Short.Card = function ShortCard({ children, ...restProps}){
     return <Card {...restProps}>{children}</Card>
+}
+
+Short.Group = function ShortGroup({ children, ...restProps}){
+    return <Group {...restProps}>{children}</Group>
 }
 
 Short.Form = function ShortForm({ children, ...restProps}){
