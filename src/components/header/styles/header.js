@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 export const Group = styled.div`
     margin-top: 2em;
-    margin-bottom: 4em;
+    margin-bottom: 6em;
 
     @media(min-width:700px){
         display: flex;
