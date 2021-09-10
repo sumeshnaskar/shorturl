@@ -9,7 +9,9 @@ export const Card = styled.div`
     max-width: 80%;
     margin: 0 auto;
     border-radius: 10px;
-    height: 120px;    
+    
+    
+    
 `
 export const Form = styled.form`
     background: url(${process.env.PUBLIC_URL + '/images/bg-shorten-mobile.svg'}) no-repeat;
@@ -20,7 +22,7 @@ export const Form = styled.form`
     justify-content: space-between;
     margin: 0 auto;
     padding: 1em;
-    border-radius: 10px;  
+    border-radius: 10px;   
     position: relative;
     top: -60px;
 
@@ -35,7 +37,7 @@ export const Form = styled.form`
 `
 
 export const Group = styled.div`
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 `
 
@@ -64,7 +66,7 @@ export const Button = styled.button`
     border-radius: 5px;
     background-color: hsl(180, 66%, 49%);
     padding: .65em;
-    width: 90%;
+    width: 100%;
     font-weight: 700;
     color: #fff;
     cursor: pointer;
@@ -91,4 +93,69 @@ export const Error = styled.p`
     @media(min-width: 700px){
         margin: 0;
     }
+`
+
+export const Text = styled.p`
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+    font-size: .8rem;
+
+    @media(min-width: 700px){
+       margin-right: 1em;
+    }
+    
+`
+
+export const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 1em;
+
+    @media(min-width: 700px){
+        flex-direction: row;
+    }
+    
+`
+
+export const Break = styled.div`
+    width: 98%;
+    height: 2px;
+    background-color: hsl(257, 22%, 95%);
+    margin: 0 auto;
+
+    @media(min-width: 700px){
+        display: none;
+    }
+`
+
+export const Inner = styled.div`
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    
+
+    @media(min-width: 700px){
+        flex-direction: row;
+        align-items: center;
+        padding: .5em;
+    }
+
+    > ${Button}{
+        margin-top: 1em;
+
+        &:focus{
+            background-color: hsl(257, 27%, 26%);
+        }
+
+        @media(min-width: 700px){
+            margin: 0;
+            width: 100px;
+        }
+    }
+    
 `
