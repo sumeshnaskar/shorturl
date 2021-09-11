@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import { Short } from '../components'
 
@@ -7,10 +7,11 @@ export function ShortContainer(){
     const [shortUrl, setShortUrl] = useState('')
     const [error, setError] = useState('')
     const [copy, setCopy] = useState('Copy')
+    const [pastResult, setPastResult] = useState([{url: url, shortUrl: shortUrl}])
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        url.length < 1 ? setError('Please add a link') : setError('')
+        url.length < 1 && setError('Please add a link')
         try{
             const fetchShortUrl = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
             const response = await fetchShortUrl.json()
@@ -19,11 +20,22 @@ export function ShortContainer(){
                 throw new Error(errMessage)
             }
             setShortUrl(response.result.short_link)
+            
+            setPastResult([ ...pastResult, { url: url, shortUrl: shortUrl}])
+            console.log(pastResult)
+            localStorage.setItem("resultArray", JSON.stringify(pastResult))
         }catch(err){
-            setError(err.errMessage)
-        }
-        
+            url.length < 1 ? setError('Please add a link') : setError(`${err}`)
+            
+        }      
     }
+
+    useEffect(()=>{
+        const prevResults = localStorage.getItem("resultArray")
+        const result = JSON.parse(prevResults)
+        console.log(result)
+        
+    },[])
     
 
 

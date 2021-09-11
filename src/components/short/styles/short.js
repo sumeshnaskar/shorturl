@@ -103,6 +103,7 @@ export const Text = styled.p`
 
     @media(min-width: 700px){
        margin-right: 1em;
+       max-width: 300px;
     }
     
 `
