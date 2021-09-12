@@ -26,7 +26,7 @@ export const Form = styled.form`
     position: relative;
     top: -60px;
 
-    @media(min-width: 700px){
+    @media(min-width: 850px){
         background: url(${process.env.PUBLIC_URL + '/images/bg-shorten-desktop.svg'}) no-repeat;
         background-color: hsl(257, 27%, 26%);
         background-size: 100% 100%;
@@ -55,7 +55,7 @@ export const Input = styled.input`
         opacity: 0.5;    
     }
 
-    @media(min-width: 700px){
+    @media(min-width: 850px){
         width: 95%;
         height: 40px;
     }
@@ -75,7 +75,7 @@ export const Button = styled.button`
         background-color: hsl(180, 66%, 75%);
     }
 
-    @media(min-width: 700px){
+    @media(min-width: 850px){
         width: 25%;
         height: 40px;
     }
@@ -90,7 +90,7 @@ export const Error = styled.p`
     height: 15px;
     font-style: italic;
 
-    @media(min-width: 700px){
+    @media(min-width: 850px){
         margin: 0;
     }
 `
@@ -101,7 +101,7 @@ export const Text = styled.p`
     margin: 0;
     font-size: .8rem;
 
-    @media(min-width: 700px){
+    @media(min-width: 850px){
        margin-right: 1em;
     }
     
@@ -116,7 +116,7 @@ export const Wrapper = styled.div`
     background-color: #fff;
     margin-top: 1em;
 
-    @media(min-width: 700px){
+    @media(min-width: 850px){
         flex-direction: row;
     }
     
@@ -128,7 +128,7 @@ export const Break = styled.div`
     background-color: hsl(257, 22%, 95%);
     margin: 0 auto;
 
-    @media(min-width: 700px){
+    @media(min-width: 850px){
         display: none;
     }
 `
@@ -139,7 +139,7 @@ export const Inner = styled.div`
     flex-direction: column;
     
 
-    @media(min-width: 700px){
+    @media(min-width: 850px){
         flex-direction: row;
         align-items: center;
         padding: .5em;
@@ -152,7 +152,7 @@ export const Inner = styled.div`
             background-color: hsl(257, 27%, 26%);
         }
 
-        @media(min-width: 700px){
+        @media(min-width: 850px){
             margin: 0;
             width: 100px;
         }
