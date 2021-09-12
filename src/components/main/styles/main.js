@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.section`
     background-color: hsl(257, 22%, 95%);
     width: 100%;
-    padding: 5em 1em;
+    padding: 2em 1em 5em;
     margin: 0 auto;
 `
 export const Wrapper = styled.div`
