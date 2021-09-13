@@ -7,6 +7,7 @@ export function ShortContainer(){
     const [shortUrl, setShortUrl] = useState('')
     const [error, setError] = useState('')
     const [pastResult, setPastResult] = useState([])
+    const [clickItem,setClickItem] = useState(-1)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -79,9 +80,13 @@ export function ShortContainer(){
                                     {prevUrl.shortUrl}
                                 </Short.Text>
                                 <Short.Button 
-                                    onClick = {() => navigator.clipboard.writeText(prevUrl.shortUrl)}
+                                    style = {{backgroundColor: clickItem === index && 'hsl(257, 27%, 26%)'}}
+                                    onClick = {() => {
+                                        setClickItem(index)
+                                        navigator.clipboard.writeText(prevUrl.shortUrl)
+                                    }}
                                 >
-                                    Copy
+                                    {clickItem === index ? 'Copied!' : 'Copy'}
                                 </Short.Button>
                             </Short.Inner>
                         </Short.Wrapper>
