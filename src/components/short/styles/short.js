@@ -148,10 +148,6 @@ export const Inner = styled.div`
     > ${Button}{
         margin-top: 1em;
 
-        &:focus{
-            background-color: hsl(257, 27%, 26%);
-        }
-
         @media(min-width: 850px){
             margin: 0;
             width: 100px;
